@@ -19,6 +19,8 @@
 #filename sample JAN-10-Wed-1630DBbackup.tar.gz
 #after zip delete dump file
 
+
+##script1
 #first backup of the day
 if[ "$hour" = "7" || "$hour" = "07"]
 	then
@@ -34,7 +36,10 @@ if[ "$hour" = "15" ]
 	else
 		echo "False"
 fi
+##end of script1
 
+
+##script2
 #Third backup of the day
 #send backup via scp
 if[ "$hour" = "23" ]
@@ -43,14 +48,6 @@ if[ "$hour" = "23" ]
 	else
 		echo "False"
 fi
-
-
-
-
-
-
-
-
 
 #check if directory exists
 DIRECTORY=/bin/date.sh
@@ -74,12 +71,18 @@ else
 fi
 
 
+#+7days
+presentday=$(date +%d)
+nextday=$(date +%d -d "+7 day")
+
+echo $presentday
+echo $nextday
 
 
-
-
-
-
+#get last day of the month
+date -d "`date +%Y%m01` +1 month -1 day" +%d
+#get prior day of wednesday
+date -d "`date +%Y%m01` +1 month -6day" +%d
 
 
 
