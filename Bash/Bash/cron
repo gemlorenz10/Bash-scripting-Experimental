@@ -1,0 +1,33 @@
+#m h dom mn dow command
+
+#first back up of the day
+* 7 * * * backup.sh
+
+#2nd back up of the day
+* 15 * * * backup.sh
+
+#last back up for the day(Daily backup)
+* 23 * * * backup-send.sh
+
+#Weekly backup
+* 23 * * wed backup-send.sh #
+
+#Monthly Backup(Last wed of the month)
+* 23 * * wed backup-send.sh
+#today + 7days
+#if today > next7days then
+#Add label last-wed-month
+#
+#
+
+
+
+date -d "+7 day"
+
+if presentday > next7thday then
+add label last wed
+else
+dont add label
+fi
+
+
