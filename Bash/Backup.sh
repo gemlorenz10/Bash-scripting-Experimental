@@ -22,9 +22,9 @@
 #first backup of the day
 if[ "$hour" = "7" || "$hour" = "07"]
 	then
-		echo "True"
+		echo "True" #run the applicable bash script		
 	else
-		echo "False"
+		echo "False" #if possible notify admin
 fi
 
 #second backup of the day
