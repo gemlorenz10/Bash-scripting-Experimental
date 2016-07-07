@@ -10,14 +10,3 @@
 * 23 * * * BackupDB_daily.sh
 
 
-
-
-date -d "+7 day"
-
-if presentday > next7thday then
-add label last wed
-else
-dont add label
-fi
-
-
